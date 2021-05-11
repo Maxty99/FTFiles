@@ -10,6 +10,10 @@
   },
   "author": "Maxim Tyuterev",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maxty99/FTFiles.git"
+  },
   "dependencies": {
     "@types/jasmine": "^3.6.9",
     "@types/puppeteer": "^5.4.3",
