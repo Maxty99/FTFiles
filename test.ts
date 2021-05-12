@@ -12,8 +12,8 @@ const a = new FTFile(b);
 a.readFromFile('./out');
 let aba = new Array();
 let acc = 1000;
-for (let i = 0; i < acc; i++) {
-  aba.push(a.getpointAt(i / acc));
-}
+// for (let i = 0; i < acc; i++) {
+//   aba.push(a.getpointAt(i / acc));
+// }
 console.log(aba);
 b.close();
