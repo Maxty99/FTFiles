@@ -1,15 +1,12 @@
-import fs from 'fs';
 import { complex } from 'ts-complex-numbers';
 
-class FTFile {
+class FTBuffer {
   coefficients: Array<complex>;
 
   constructor() {
     this.coefficients = new Array<complex>();
   }
-
-  writeToFile(fileName: string) {
-    const fDesc = fs.openSync(fileName, 'w');
+  writeToBuffer(): Buffer {
     const buf = Buffer.alloc(4 + this.coefficients.length * 8);
     console.log('Creating ' + (4 + this.coefficients.length * 8).toString() + ' byte file');
     let pos = 0;
@@ -21,12 +18,9 @@ class FTFile {
       buf.writeFloatBE(this.coefficients[i].img, pos);
       pos += 4;
     }
-    fs.writeSync(fDesc, buf, 0, buf.length, 0);
-    // Close file
+    return buf;
   }
-
-  readFromFile(fileName: string) {
-    const buf = Buffer.from(fs.readFileSync(fileName));
+  readFromBuffer(buf: Buffer) {
     let pos = 0;
     const n = buf.readInt32BE(pos);
     console.log('Read length: ' + n);
@@ -42,7 +36,6 @@ class FTFile {
       this.coefficients.push(new complex(real, img));
     }
     console.log(this.coefficients);
-    // Close file
   }
 
   getCoefficients(): Array<complex> {
@@ -50,5 +43,5 @@ class FTFile {
   }
 }
 
-export { FTFile };
-export default { FTFile };
+export { FTBuffer };
+export default { FTBuffer };
