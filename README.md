@@ -1,6 +1,9 @@
 # FTFiles
 
 ![Npm Downloads](https://img.shields.io/npm/dm/ftfiles)
+
+---
+
 Fourier Transform Files are files that aim to encode simple vector image data. The goal of this library is to provide a serive that can take a svg file with a **single** svg path. Then it will calculate and rencode it into a set of coefficients that apply to a complex fourier series.
 
 # Usage
