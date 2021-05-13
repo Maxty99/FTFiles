@@ -58,6 +58,21 @@ class FTFile {
     // Close file
   }
 
+  writeToBuffer(): Buffer {
+    const buf = Buffer.alloc(4 + this.coefficients.length * 8);
+    console.log('Creating ' + (4 + this.coefficients.length * 8).toString() + ' byte file');
+    let pos = 0;
+    buf.writeInt32BE(this.coefficients.length, pos);
+    pos += 4;
+    for (let i = 0; i < this.coefficients.length; i++) {
+      buf.writeFloatBE(this.coefficients[i].real, pos);
+      pos += 4;
+      buf.writeFloatBE(this.coefficients[i].img, pos);
+      pos += 4;
+    }
+    return buf;
+  }
+
   readFromFile(fileName: string) {
     const buf = Buffer.from(fs.readFileSync(fileName));
     let pos = 0;
