@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { complex } from 'ts-complex-numbers';
-import { SVG } from './svgModule';
 
 class FTFile {
   SvgPath: SVGPathElement;
@@ -91,6 +90,25 @@ class FTFile {
     console.log(this.coefficients);
     // Close file
   }
+
+  readFromBuffer(buf: Buffer) {
+    let pos = 0;
+    const n = buf.readInt32BE(pos);
+    console.log('Read length: ' + n);
+    pos += 4;
+    this.coefficients = new Array<complex>();
+    for (let i = 0; i < n; i++) {
+      const real = buf.readFloatBE(pos);
+      //console.log(real);
+      pos += 4;
+      const img = buf.readFloatBE(pos);
+      //console.log(img);
+      pos += 4;
+      this.coefficients.push(new complex(real, img));
+    }
+    console.log(this.coefficients);
+  }
+
   getCoefficients(): Array<complex> {
     return this.coefficients;
   }
