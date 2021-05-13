@@ -1,4 +1,4 @@
-import { SVG } from '../svgModule';
+//import { SVG } from '../svgModule';
 import { FTFile } from '../ftFileModule';
 
 describe('Testing FTF class', function () {
