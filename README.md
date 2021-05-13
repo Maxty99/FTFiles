@@ -5,7 +5,9 @@ Fourier Transform Files are files that aim to encode simple vector image data. T
 
 # Usage
 
-This can be done in the backend by an api:
+To be outlined
+
+<!-- This can be done in the backend by an api:
 
 ```ts
 import { SVG, FTFile } from 'ftfiles';
@@ -36,7 +38,7 @@ const drawer = new FTDrawer(coefficients);
 drawer.setCanvas(); // Set the canvas to which to draw
 drawer.setScale(); // Set the scale at which to draw
 drawer.draw(); // Draws
-```
+``` -->
 
 # Thanks
 
