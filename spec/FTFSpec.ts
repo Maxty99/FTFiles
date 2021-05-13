@@ -2,15 +2,15 @@
 import { FTFile } from '../ftFileModule';
 
 describe('Testing FTF class', function () {
-  let svgTest: SVG;
-  let path: SVGPathElement;
-  beforeEach(() => {
-    svgTest = new SVG();
-    svgTest.loadFromFile('./SVG/Pi-symbol.svg');
-  });
-  afterEach(async () => {
-    await svgTest.close();
-  });
+  // let svgTest: SVG;
+  // let path: SVGPathElement;
+  // beforeEach(() => {
+  //   svgTest = new SVG();
+  //   svgTest.loadFromFile('./SVG/Pi-symbol.svg');
+  // });
+  // afterEach(async () => {
+  //   await svgTest.close();
+  // });
   // it('can load FTFile', async () => {
   //   const ftTest = new FTFile(await svgTest.getSVGPathElement());
   //   expect(ftTest).toBeInstanceOf(FTFile);
