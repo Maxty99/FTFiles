@@ -3,7 +3,6 @@
 // Module for loading SVG file data as paths
 
 import fs from 'fs';
-import { number } from 'mathjs';
 import puppeteer from 'puppeteer';
 
 class SVG {

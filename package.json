@@ -7,7 +7,8 @@
     "/dist/svg*",
     "/dist/ft*",
     "/ft*",
-    "/svg*"
+    "/svg*",
+    "/index*"
   ],
   "scripts": {
     "start": "ts-node svgModule.ts",
