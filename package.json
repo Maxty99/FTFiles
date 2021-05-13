@@ -1,14 +1,14 @@
 {
   "name": "ftfiles",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Fourier Transform Files are files that aim to encode simple vector image data",
-  "main": "ftFileModule.ts",
+  "main": "/dist/index.js",
   "files": [
     "/dist/svg*",
     "/dist/ft*",
     "/ft*",
     "/svg*",
-    "/index*"
+    "/dist/index*"
   ],
   "scripts": {
     "start": "ts-node svgModule.ts",
