@@ -11,14 +11,14 @@ describe('Testing FTF class', function () {
   afterEach(async () => {
     await svgTest.close();
   });
-  it('can load FTFile', async () => {
-    const ftTest = new FTFile(await svgTest.getSVGPathElement());
-    expect(ftTest).toBeInstanceOf(FTFile);
-    expect(ftTest.SvgPoints).toBeInstanceOf(Array);
-  });
-  fit('can get Points', async () => {
-    const ftTest = new FTFile(await svgTest.getSVGPathElement());
-    ftTest.processPoints(10);
-    expect(ftTest.SvgPoints).not.toBeUndefined();
-  });
+  // it('can load FTFile', async () => {
+  //   const ftTest = new FTFile(await svgTest.getSVGPathElement());
+  //   expect(ftTest).toBeInstanceOf(FTFile);
+  //   expect(ftTest.SvgPoints).toBeInstanceOf(Array);
+  // });
+  // it('can get Points', async () => {
+  //   const ftTest = new FTFile(await svgTest.getSVGPathElement());
+  //   ftTest.processPoints(10);
+  //   expect(ftTest.SvgPoints).not.toBeUndefined();
+  // });
 });
