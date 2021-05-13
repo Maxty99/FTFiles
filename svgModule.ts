@@ -45,15 +45,12 @@ class SVG {
       await this.initBrowser();
     }
 
-    const serializedPath = await this.page!.evaluate(
-      (lengthParam) => {
-        let path = document.querySelector('path');
-        if (path != null) {
-          return { x: path.getPointAtLength(lengthParam).x, y: path.getPointAtLength(lengthParam).y };
-        } else return undefined;
-      },
-      length // Something wrong here
-    ); //Dirty hack
+    const serializedPath = await this.page!.evaluate((lengthParam) => {
+      let path = document.querySelector('path');
+      if (path != null) {
+        return { x: path.getPointAtLength(lengthParam).x, y: path.getPointAtLength(lengthParam).y };
+      } else return undefined;
+    }, length); //Dirty hack
 
     if (serializedPath != undefined) {
       return Promise.resolve(serializedPath);
@@ -74,6 +71,23 @@ class SVG {
     }); //Dirty hack
     if (pathLength != undefined) {
       return pathLength;
+    } else {
+      return Promise.reject(new Error('Path invalid'));
+    }
+  }
+
+  async getSVGPathElement(): Promise<SVGPathElement> {
+    if (this.page == null) {
+      await this.initBrowser();
+    }
+    const pathElement = await this.page!.evaluate(() => {
+      const path = document.querySelector('path');
+      if (path != null) {
+        return path;
+      } else return undefined;
+    }); //Dirty hack
+    if (pathElement != undefined) {
+      return pathElement;
     } else {
       return Promise.reject(new Error('Path invalid'));
     }

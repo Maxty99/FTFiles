@@ -3,11 +3,11 @@ import { complex } from 'ts-complex-numbers';
 import { SVG } from './svgModule';
 
 class FTFile {
-  SvgPath: SVG;
+  SvgPath: SVGPathElement;
   SvgPoints: Array<complex>;
   coefficients: Array<complex>;
 
-  constructor(path: SVG) {
+  constructor(path: SVGPathElement) {
     this.SvgPath = path;
     this.SvgPoints = new Array<complex>();
     this.coefficients = new Array<complex>();
@@ -16,16 +16,15 @@ class FTFile {
   async processPoints(numberOfPoints: number) {
     this.SvgPoints = new Array<complex>();
 
-    const pathLength = await this.SvgPath.getTotalLength();
+    const pathLength = this.SvgPath.getTotalLength();
     const interval = pathLength / numberOfPoints;
     //console.log('Length: ' + pathLength + '\n' + 'Interval: ' + interval);
     for (let i = 0; i < pathLength; i += interval) {
-      let x = (await this.SvgPath.getPointAtLength(i)).x;
-      let y = (await this.SvgPath.getPointAtLength(i)).y;
+      let x = this.SvgPath.getPointAtLength(i).x;
+      let y = this.SvgPath.getPointAtLength(i).y;
       //console.log('got ' + x + ',' + y + ' with ' + i);
       this.SvgPoints.push(new complex(x, y));
     }
-    await this.SvgPath.close();
   }
 
   discreteTransform() {

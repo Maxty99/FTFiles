@@ -1,4 +1,3 @@
-import { FTFile } from 'ftFileModule';
 import { complex } from 'ts-complex-numbers';
 
 class FTDrawer {
