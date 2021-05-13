@@ -1,6 +1,6 @@
 {
   "name": "ftfiles",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Fourier Transform Files are files that aim to encode simple vector image data",
   "main": "/dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,19 +23,16 @@
     "url": "https://github.com/Maxty99/FTFiles.git"
   },
   "dependencies": {
-    "@types/jasmine": "^3.6.9",
-    "@types/puppeteer": "^5.4.3",
-    "htmlparser2": "^6.1.0",
-    "jasmine": "^3.7.0",
-    "jsdom": "^16.5.2",
-    "puppeteer": "^8.0.0",
     "ts-complex-numbers": "^1.0.5"
   },
   "devDependencies": {
     "@types/dom-parser": "^0.1.1",
+    "@types/jasmine": "^3.7.4",
     "@types/jsdom": "^16.2.10",
-    "@types/mathjs": "^6.0.11",
-    "@types/node": "^14.14.37",
+    "@types/mathjs": "^6.0.12",
+    "@types/node": "^14.14.45",
+    "@types/puppeteer": "^5.4.3",
+    "jasmine": "^3.7.0",
     "typescript": "^4.2.4"
   }
 }

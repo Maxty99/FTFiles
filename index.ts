@@ -1,11 +1,11 @@
 import { FTFile } from './ftFileModule';
-import { SVG } from './svgModule';
+//import { SVG } from './svgModule';
 import { FTDrawer } from './ftDrawModule';
 import { FTProcessor } from './ftPathProcessor';
 import { FTBuffer } from './ftBufferModule';
 export { FTFile };
-export { SVG };
+//export { SVG };
 export { FTDrawer };
 export { FTProcessor };
 export { FTBuffer };
-export default { FTFile, SVG, FTDrawer, FTProcessor, FTBuffer };
+export default { FTFile, FTDrawer, FTProcessor, FTBuffer };
