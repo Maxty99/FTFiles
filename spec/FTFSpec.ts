@@ -1,5 +1,5 @@
 //import { SVG } from '../svgModule';
-import { FTFile } from '../ftFileModule';
+//import { FTFile } from '../ftFileModule';
 
 describe('Testing FTF class', function () {
   // let svgTest: SVG;
