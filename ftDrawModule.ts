@@ -19,7 +19,9 @@ class FTDrawer {
   setScale(scale: number) {
     this.scale = scale;
   }
-
+  setInterval(newInterval: number) {
+    this.drawInterval = newInterval;
+  }
   getpointAt(t: number): Array<number> {
     const N = this.coefficients.length;
     let sum = new complex(0, 0);
@@ -33,11 +35,12 @@ class FTDrawer {
     if (this.canvas != undefined) {
       const context = this.canvas.getContext('2d');
       const start = this.getpointAt(0);
-      context?.moveTo(start[0], start[1]);
+      context?.moveTo(start[0] * this.scale, start[1] * this.scale);
       for (let i = 0; i < this.drawInterval; i++) {
         const point = this.getpointAt(i / this.drawInterval);
-        context?.lineTo(point[0], point[1]);
+        context?.lineTo(point[0] * this.scale, point[1] * this.scale);
       }
+      context?.stroke();
     } else {
       console.log('No canvas supplied');
     }
