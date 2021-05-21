@@ -57,6 +57,13 @@ class FTBuffer {
   getCoefficients(): Array<complex> {
     return this.coefficients;
   }
+  /**
+   * Set the coefficients
+   * @param coef the new coefficients
+   */
+  setCoefficients(coef: Array<complex>) {
+    this.coefficients = coef;
+  }
 }
 
 export { FTBuffer };
