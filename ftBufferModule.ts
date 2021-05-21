@@ -1,11 +1,18 @@
 import { complex } from 'ts-complex-numbers';
 
 class FTBuffer {
-  coefficients: Array<complex>;
+  private coefficients: Array<complex>;
 
+  /**
+   * Initiallizes a new FTBuffer with an empty coefficients array
+   */
   constructor() {
     this.coefficients = new Array<complex>();
   }
+  /**
+   * Writes the length of the coefficients array and the coefficients to the buffer (BE)
+   * @returns Buffer with encoded information
+   */
   writeToBuffer(): Buffer {
     const buf = Buffer.alloc(4 + this.coefficients.length * 8);
     console.log('Creating ' + (4 + this.coefficients.length * 8).toString() + ' byte file');
@@ -20,6 +27,11 @@ class FTBuffer {
     }
     return buf;
   }
+
+  /**
+   * Takes a buffer and interprets it as an ftfile and extracts information
+   * @param buf The buffer from which to read
+   */
   readFromBuffer(buf: Buffer) {
     let pos = 0;
     const n = buf.readInt32BE(pos);
@@ -38,6 +50,10 @@ class FTBuffer {
     console.log(this.coefficients);
   }
 
+  /**
+   * Get the coefficients
+   * @returns coefficients
+   */
   getCoefficients(): Array<complex> {
     return this.coefficients;
   }
