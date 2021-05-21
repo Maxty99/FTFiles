@@ -4,7 +4,7 @@
 
 ---
 
-Fourier Transform Files are files that aim to encode simple vector image data. The goal of this library is to provide a way to take a svg file with a **single** svg path. Then it will calculate and rencode it into a set of coefficients that apply to a complex fourier series.
+Fourier Transform Files are files that aim to encode simple vector image data. The goal of this library is to provide a way to take a svg file with a **single** svg path. Then it will calculate and re-encode it into a set of coefficients that apply to a complex fourier series.
 
 # Usage
 
@@ -22,7 +22,7 @@ ftProc.dft(); // Does the transformation
 ftProc.getCoefficients(); // used to retreive the coefficients of the series
 ```
 
-Then the coeficcients can be read in order to draw it with the drawing module
+Then the coefficients can be read in order to draw it with the drawing module
 
 ```ts
 import { FTDrawer } from 'ftfiles';
