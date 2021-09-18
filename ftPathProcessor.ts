@@ -41,12 +41,10 @@ class FTProcessor {
     for (let k = 0; k < N; k++) {
       let sum = new complex(0, 0);
       for (let n = 0; n < N; n++) {
-        const phi = (2 * Math.PI * k * n) / N;
-        const exponent = new complex(Math.cos(phi), -Math.sin(phi));
+        const phi = (-2 * Math.PI * k * n) / N;
+        const exponent = new complex(Math.cos(phi), Math.sin(phi));
         sum = sum.add(this.SvgPoints[n].mult(exponent));
       }
-      sum = sum.scalarMult(1 / N);
-
       coef.push(sum);
     }
 
