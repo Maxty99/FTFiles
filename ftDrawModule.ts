@@ -39,8 +39,8 @@ class FTDrawer {
       const phase = Math.atan2(this.coefficients[i].img, this.coefficients[i].real); // theta = atan2(x,y)
 
       // e^it=cos(t)-isin(t) <- Minus doesnt matter in this case
-      x += amp * Math.cos(i * t + phase);
-      y += amp * Math.sin(i * t + phase);
+      x += amp * Math.cos(i * t * (Math.PI * 2) + phase);
+      y += amp * Math.sin(i * t * (Math.PI * 2) + phase);
     }
     return new Array<number>(x, y);
   }
@@ -59,7 +59,7 @@ class FTDrawer {
       // Draw according to scale given
       const start = this.getpointAt(0);
       context?.moveTo(start[0] * this.scale, start[1] * this.scale);
-      for (let i = 0; i < Math.PI * 2; i += (Math.PI * 2) / points) {
+      for (let i = 0; i <= 1; i += 1 / points) {
         const point = this.getpointAt(i);
         context?.lineTo(point[0] * this.scale, point[1] * this.scale);
       }
