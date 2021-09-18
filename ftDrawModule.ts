@@ -64,7 +64,7 @@ class FTDrawer {
         console.log(point);
         context?.lineTo(point[0] * this.scale, point[1] * this.scale);
       }
-      context?.lineTo(start[0] * this.scale, start[1] * this.scale);
+      context?.closePath();
       context?.stroke();
     } else {
       console.log('No canvas supplied');
