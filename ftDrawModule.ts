@@ -47,8 +47,9 @@ class FTDrawer {
 
   /**
    * Draws the transform associated with the coefficients provided
+   * @param points The number of poitns to sample from the transformed function, length of coef by default
    */
-  draw() {
+  draw(points: number = this.coefficients.length) {
     if (this.canvas != undefined) {
       const context = this.canvas.getContext('2d');
       // Clear the canvas and start a new drawing
@@ -58,7 +59,7 @@ class FTDrawer {
       // Draw according to scale given
       const start = this.getpointAt(0);
       context?.moveTo(start[0] * this.scale, start[1] * this.scale);
-      for (let i = 0; i < Math.PI * 2; i += (Math.PI * 2) / this.coefficients.length) {
+      for (let i = 0; i < Math.PI * 2; i += (Math.PI * 2) / points) {
         const point = this.getpointAt(i);
         context?.lineTo(point[0] * this.scale, point[1] * this.scale);
       }

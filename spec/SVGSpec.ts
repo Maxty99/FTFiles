@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+
 //import { SVG } from '../svgModule';
 
 describe('Testing SVG class', function () {
