@@ -37,10 +37,10 @@ class FTDrawer {
       const coef = this.coefficients[k];
       const phi = 2 * Math.PI * k * n / N
       const exp = new complex(Math.cos(phi), Math.sin(phi));
-      sum.add(coef.mult(exp));
+      sum = sum.add(coef.mult(exp));
     }
     console.log(sum);
-    sum.scalarMult(1/N);
+    sum = sum.scalarMult(1/N);
     return new Array<number>(sum.real, sum.img);
   }
 

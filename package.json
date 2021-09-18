@@ -1,6 +1,6 @@
 {
   "name": "ftfiles",
-  "version": "1.2.0-beta",
+  "version": "1.2.2-beta",
   "description": "Fourier Transform Files are files that aim to encode simple vector image data",
   "main": "/dist/index.js",
   "types": "./dist/index.d.ts",
